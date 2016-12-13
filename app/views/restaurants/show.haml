@@ -1,0 +1,24 @@
+/ NOTE inline styles due to time constraints
+.restaurant-hero{style: "background: linear-gradient(rgba(20, 20, 20, 0.6), rgba(20, 20, 20, 0.6)), url(#{image_path @restaurant.image_path});"}
+  .container
+    .restaurant-hero-details
+      %span.restaurant-name= @restaurant.name
+      %br
+      %span.restaurant-description= @restaurant.description
+
+.container
+  .menu-items
+    - @restaurant.menu_items.each do |mi|
+      .menu-item
+        = form_tag(controller: :line_items, action: :create) do
+          = hidden_field_tag :order_id, session[:order_id]
+          = hidden_field_tag :menu_item_id, mi.id
+          = hidden_field_tag :restaurant_id, @restaurant.id
+          .menu-item-img
+            = image_tag(mi.image_path)
+          .menu-item-details
+            = submit_tag mi.name, class: 'menu-item-name'
+            %br
+            %span.menu-item-description= mi.description
+            %br
+            %span.menu-item-price= number_to_currency(mi.price, unit: '$')

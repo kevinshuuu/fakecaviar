@@ -1,0 +1,44 @@
+nav.navbar {
+  border-radius: 0;
+  display: flex;
+  flex-flow: row wrap;
+  height: 70px;
+  margin: 0;
+  width: 100%;
+
+  div {
+    color: #555;
+    flex-grow: 1;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    height: 70px;
+    line-height: 70px;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+    width: 100px;
+  }
+
+  .account-icon {
+    display: inline-block;
+    left: -5px;
+    position: relative;
+    top: 7px;
+  }
+
+  .bag-icon {
+    display: inline-block;
+    left: 95px;
+    position: relative;
+    top: 7px;
+  }
+
+  a {
+    color: #000;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

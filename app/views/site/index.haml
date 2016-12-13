@@ -1,0 +1,18 @@
+.main-hero
+  %p.lead-text
+    Get delivery from your favorite restaurants.
+    %br
+    %span.sub-text
+      BEST LOCAL RESTAURANTS | FAST DELIVERY | REAL-TIME GPS TRACKING
+
+.container
+  %h1.available-now AVAILABLE NOW
+  .restaurants
+    - Restaurant.all.each do |r|
+      .restaurant
+        .restaurant-img
+          = link_to image_tag(r.image_path), restaurant_path(r)
+        .restaurant-details
+          = link_to r.name, restaurant_path(r), class: 'restaurant-name'
+          %br
+          %span.restaurant-description= r.description

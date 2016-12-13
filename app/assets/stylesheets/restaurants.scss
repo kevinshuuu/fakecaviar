@@ -1,0 +1,67 @@
+// Place all the styles related to the restaurants controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.restaurant-hero {
+  background-size: cover;
+  height: 300px;
+  width: 100%;
+}
+
+.restaurant-hero-details {
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  margin-top: 170px;
+
+  .restaurant-name {
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  .restaurant-description {
+    font-size: 18px;
+  }
+}
+
+.menu-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 20px;
+  width: 100%;
+}
+
+.menu-item {
+  padding: 10px 0;
+
+  .menu-item-img {
+    height: 150px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    width: 250px;
+
+    img {
+      width: 250px;
+    }
+  }
+
+  .menu-item-details {
+    font-family: 'Raleway', sans-serif;
+
+    .menu-item-name {
+      background: none;
+      border: none;
+      color: #000;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 0;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .menu-item-price {
+      font-weight: 700;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+%nav.navbar
+  .nav-account
+    %i.account-icon
+    - if current_user
+      = link_to "#{current_user.first_name} #{current_user.last_name}", destroy_user_session_path, method: 'delete'
+    - else
+      = link_to "Sign In", new_user_session_path
+  .nav-logo
+    = link_to image_tag('logo.png'), root_path
+  .nav-cart
+    %i.bag-icon
+    - order = Order.find(session[:order_id])
+    - item_count = order.line_items.count
+    - if item_count == 0
+      No items
+    - elsif item_count == 1
+      = link_to '1 item', order_path(order)
+    - else
+      = link_to "#{item_count} items", order_path(order)

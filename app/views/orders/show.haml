@@ -1,0 +1,55 @@
+.order-screen
+  .container
+    - if @order.complete
+      %h1 ORDER COMPLETE
+    - else
+      %h1 CHECKOUT
+    .delivery-details
+      .delivery-info
+        %h2 DELIVERY DETAILS
+        / NOTE due to time constraints
+        - if current_user
+          %p
+            #{current_user.address_line_one}
+          %p
+            #{current_user.address_line_two}
+          %p
+            #{current_user.city}, #{current_user.state} #{current_user.zip_code}
+          %br
+          %p
+            #{current_user.first_name} #{current_user.last_name}
+          %p
+            #{current_user.phone}
+        - else
+          %p
+            Please create an account to place your order.
+      .payment-info
+        %h2 PAYMENT DETAILS
+        %p
+          Fake MasterCard ending in 1234
+      .delivery-divider
+      .delivery-order-button
+        = form_tag(controller: :orders, action: :complete) do
+          = hidden_field_tag :order_id, @order.id
+          = submit_tag 'Place Order', class: "place-order pull-right"
+    .order-details
+      / NOTE due to time constraints
+      - restaurant = @order.restaurant || @order.line_items.first.menu_item.restaurant
+      .order-image
+        = image_tag(restaurant.image_path)
+      .order-restaurant
+        %p.order-restaurant-name= restaurant.name
+        = link_to "View Menu", restaurant_path(restaurant), class: 'order-restaurant-menu'
+      .order-divider
+      .order-items
+        - @order.line_items.each do |li|
+          .order-item
+            %p.pull-left
+              #{li.menu_item.name}
+              = link_to '', line_item_path(li), method: 'delete', class: 'remove-icon'
+            %p.pull-right= number_to_currency(li.menu_item.price, unit: '$')
+      .order-divider
+      .order-total
+        %p.pull-left Total
+        %p.pull-right= number_to_currency(@order.total, unit: '$')
+

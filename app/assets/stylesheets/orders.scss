@@ -1,0 +1,136 @@
+// Place all the styles related to the Orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.order-screen {
+  background-color: #eef0f0;
+  border-top: 1px solid #ccc;
+  height: 100%;
+  padding-bottom: 300px;
+  width: 100%;
+
+  h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 40px 0;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 0;
+  }
+}
+
+.delivery-details {
+  display: inline-block;
+  font-family: 'Raleway', sans-serif;
+  margin-right: 10px;
+  vertical-align: top;
+  width: 60%;
+
+
+  p {
+    margin: 0;
+  }
+
+  .delivery-info {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+
+  .payment-info {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+
+  .delivery-divider {
+    border-bottom: 1px solid #ccc;
+    margin: auto;
+    width: 100%;
+  }
+
+  .delivery-order-button {
+    padding: 20px 0;
+  }
+
+  .place-order {
+    background-color: #39b238;
+    border: 1px solid darken(#39b238, 0.1);
+    border-radius: 4px;
+    color: #fff;
+    height: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.order-details {
+  background: #fff;
+  border: 1px solid #ccc;
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: top;
+  width: 35%;
+
+  .order-image {
+    height: 200px;
+    overflow: hidden;
+    width: 100%;
+
+    img {
+      width: 100%
+    }
+  }
+
+  .order-restaurant {
+    display: flex;
+    font-family: 'Raleway', sans-serif;
+    padding: 20px;
+
+    p {
+      flex-grow: 1;
+      font-weight: 700;
+      margin: 0;
+    }
+  }
+
+  .order-divider {
+    border-bottom: 1px solid #ccc;
+    margin: auto;
+    width: 90%;
+  }
+
+  .order-items {
+    padding-bottom: 20px;
+  }
+
+  .order-item {
+    font-family: 'Raleway', sans-serif;
+    padding: 20px;
+
+    .remove-icon {
+      margin-left: 90px;
+      margin-top: -18px;
+      position: absolute;
+    }
+
+    p {
+      font-weight: 700;
+    }
+  }
+
+  .order-total {
+    font-family: 'Raleway', sans-serif;
+    padding: 20px;
+
+    p {
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+}
